@@ -22,13 +22,19 @@ function App() {
           </p>
         </div>
         <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
+        type="button"
+        className="counter"
+        onClick={() => setCount((count) => count + 1)}
         >
-          Count is {count}
-          new count is {count}
+        Count is {count}
         </button>
+        <button2
+        type="button"
+        className="counter"
+        onClick={() => setCount((count) => count + 1)}
+        >
+        new count is {count*2}
+        </button2>
       </section>
 
       <div className="ticks"></div>
