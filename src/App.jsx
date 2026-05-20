@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-  <section id="center">
+      <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
           <img src={reactLogo} className="framework" alt="React logo" />
@@ -22,19 +22,14 @@ function App() {
           </p>
         </div>
         <button
-        type="button"
-        className="counter"
-        onClick={() => setCount((count) => count + 1)}
+          type="button"
+          className="counter"
+          onClick={() => setCount((count) => count + 1)}
         >
-        Count is {count}
+          Count is {count}
+          <br />
+          New Count {count*67}
         </button>
-        <button2
-        type="button"
-        className="counter"
-        onClick={() => setCount((count) => count + 1)}
-        >
-        new count is {count*2}
-        </button2>
       </section>
 
       <div className="ticks"></div>

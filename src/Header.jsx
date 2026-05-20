@@ -1,15 +1,16 @@
-function Header() {
-  return (
-    <header>
-      <div>
-        <img src='./assets/hero.png' alt="React Logo" />
-      </div>
+import "./Header.css"
+import heroImg from './assets/hero.png'
 
-        <nav>
-          <c href="#">Home </c>
-          <c href="#">Contatos </c>
-        </nav>
-      </header>
+function Header() {
+    return (
+        <div>
+            <logo><img src={heroImg} alt="Hero Vite" /></logo>
+            <nav>
+                <a href="/home">HOME</a>
+                <a href="/contatos">CONTACTOS</a>
+            </nav>
+            <div className="clear"></div>
+        </div>
     )
 }
 
