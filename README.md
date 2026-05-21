@@ -17,3 +17,6 @@ If you are developing a production application, we recommend using TypeScript wi
 
 codigo  para iniciar o programa
 npm run dev
+
+#   icon
+[fla](https://www.flaticon.com/)
