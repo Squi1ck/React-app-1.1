@@ -4,7 +4,12 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
-import Message from './Message.jsx'
+
+import Mensagem from './Mensagem.jsx'
+import Alerta from './Alerta.jsx'
+import Contador from './Contador.jsx'
+import Formulario from './Formulario.jsx'
+
 
 function App() {
   return (
@@ -18,10 +23,21 @@ function App() {
         className="btn btn-success d-block mx-auto"
         onClick={() => alert('Olá, Dinis!')}
       >
-        Clica-me!
+       Clica-me!
       </button>
-      <Message mytext="Esta é a minha mensagem!" />
+      <Contador />
+
+      <h1 className="text-center">Componentes e Props</h1>
+      {/* Cada componente recebe props diferentes */}
+      <Mensagem texto="Bem-vindo à tua primeira aplicação React!" />
+      <Mensagem texto="Os componentes permitem reutilizar código!" />
+
+      <Alerta tipo="success" texto="Este é um alerta do texto" />
+      <Alerta tipo="danger" texto="Este é um alerta do texto" />
+      <Alerta tipo="warning" texto="Este é um alerta do texto" />
+
     </div>
   );
 }
-export default App;
+
+export default App
