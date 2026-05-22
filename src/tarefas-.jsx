@@ -51,6 +51,7 @@ function tarefas() {
 
                             setFormData({ ...formData, descricao: e.target.value })}></textarea>
                     </div>
+                    {/* setTarefas([...Tarefas, { ...formData, id: novoId }]); */}
 
                     {/* Botões de ação */}
                     <button className="btn btn-success mr-2">Enviar</button>
