@@ -20,6 +20,17 @@ function tarefas() {
         setFormData({ id: '', titulo: '', data: '', descricao: '' });
         setDadosSubmetidos(null);
     }
+    function novaTarefa() {
+        const NovaTarefa = {
+            id: Date.now(),
+            titulo: 'Euzinho',
+            data: 'Euzinho',
+            descricao: 'ui ui ui ui ui'
+        };
+        setTarefas([...Tarefas, NovaTarefa]);
+        limparFormulario();
+        setDadosSubmetidos(null);
+        }
 
 
     return (
@@ -52,6 +63,10 @@ function tarefas() {
                 <button type="button" className="btn btn-outline-secondary"
 
                     onClick={limparFormulario}>Limpar</button>
+
+                <button type="button" className="btn btn-outline-secondary"
+
+                    onClick={novaTarefa}>Nova Tarefa</button>
             </form>
 
             <div className="col-6">
@@ -66,12 +81,16 @@ function tarefas() {
                         </div>
                     </div>
                 )}
-
-            </div>
-
-            <div className="col-4">
-            </div>
-
+                </div>
+            <ul className="col-4">
+                {Tarefas.map((tarefa) => (
+                    <li key={tarefa.id} className="list-group-item">
+                        <h6>{tarefa.titulo}</h6>
+                        <p><strong>Data:</strong> {tarefa.data}</p>
+                        <p><strong>Descrição:</strong> {tarefa.descricao}</p>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 
