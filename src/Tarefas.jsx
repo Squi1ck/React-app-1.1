@@ -14,6 +14,13 @@ function tarefas() {
     function handleSubmit(e) {
         e.preventDefault(); // impede o recarregamento da página
         setDadosSubmetidos(formData); // guarda os dados preenchidos
+        const NovaTarefa = {
+            id: Date.now(),
+            titulo: 'Euzinho',
+            data: 'Euzinho',
+            descricao: 'ui ui ui ui ui'
+        };
+        setTarefas([...Tarefas, NovaTarefa]);
     }
     // Limpa o formulário e os dados apresentados
     function limparFormulario() {
@@ -30,7 +37,7 @@ function tarefas() {
         setTarefas([...Tarefas, NovaTarefa]);
         limparFormulario();
         setDadosSubmetidos(null);
-        }
+    }
 
 
     return (
@@ -81,7 +88,7 @@ function tarefas() {
                         </div>
                     </div>
                 )}
-                </div>
+            </div>
             <ul className="col-4">
                 {Tarefas.map((tarefa) => (
                     <li key={tarefa.id} className="list-group-item">
