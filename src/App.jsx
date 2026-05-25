@@ -30,12 +30,12 @@ function App() {
 
       <h1 className="text-center">Componentes e Props</h1>
       {/* Cada componente recebe props diferentes */}
-      <Mensagem texto="Bem-vindo à tua primeira aplicação React!" />
-      <Mensagem texto="Os componentes permitem reutilizar código!" />
+      {/* <Mensagem texto="Bem-vindo à tua primeira aplicação React!" /> */}
+      {/* <Mensagem texto="Os componentes permitem reutilizar código!" /> */}
 
-      <Alerta tipo="success" texto="Este é um alerta do texto" />
-      <Alerta tipo="danger" texto="Este é um alerta do texto" />
-      <Alerta tipo="warning" texto="Este é um alerta do texto" />
+      {/* <Alerta tipo="success" texto="Este é um alerta do texto" /> */}
+      {/* <Alerta tipo="danger" texto="Este é um alerta do texto" /> */}
+      {/* <Alerta tipo="warning" texto="Este é um alerta do texto" /> */}
       <Tarefas />
     </div>
   );

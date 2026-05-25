@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-function tarefas() {
+function Tarefas() {
     // Estado único "formData" guarda todos os campos do formulário num objeto
     const [formData, setFormData] = useState({
         id: '',
@@ -7,7 +7,7 @@ function tarefas() {
         data: '',
         descricao: ''
     });
-    const [Tarefas, setTarefas] = useState([]);
+    const [tarefas, setTarefas] = useState([]);
 
     const [dadosSubmetidos, setDadosSubmetidos] = useState(null);
     // Esta função é chamada quando o formulário é submetido
@@ -20,12 +20,24 @@ function tarefas() {
             data: 'Euzinho',
             descricao: 'ui ui ui ui ui'
         };
-        setTarefas([...Tarefas, NovaTarefa]);
+        setTarefas([...tarefas, NovaTarefa]);
     }
     // Limpa o formulário e os dados apresentados
     function limparFormulario() {
         setFormData({ id: '', titulo: '', data: '', descricao: '' });
         setDadosSubmetidos(null);
+    }
+
+    function eliminaTarefa(id) {
+        setTarefas(tarefas.filter((tarefa) => tarefa.id !== id));
+    }
+
+    function limparCadaElementolista() {
+        setTarefas(tarefas.slice(0, -1));
+    }
+
+    function limparlista() {
+        setTarefas([]);
     }
     function novaTarefa() {
         const NovaTarefa = {
@@ -34,7 +46,7 @@ function tarefas() {
             data: 'Euzinho',
             descricao: 'ui ui ui ui ui'
         };
-        setTarefas([...Tarefas, NovaTarefa]);
+        setTarefas([...tarefas, NovaTarefa]);
         limparFormulario();
         setDadosSubmetidos(null);
     }
@@ -74,6 +86,12 @@ function tarefas() {
                 <button type="button" className="btn btn-outline-secondary"
 
                     onClick={novaTarefa}>Nova Tarefa</button>
+
+
+                <button type="button" className="btn btn-outline-secondary"
+
+                    onClick={limparlista}>limpar lista</button>
+
             </form>
 
             <div className="col-6">
@@ -90,16 +108,21 @@ function tarefas() {
                 )}
             </div>
             <ul className="col-4">
-                {Tarefas.map((tarefa) => (
+                {tarefas.map((tarefa) => (
                     <li key={tarefa.id} className="list-group-item">
                         <h6>{tarefa.titulo}</h6>
                         <p><strong>Data:</strong> {tarefa.data}</p>
                         <p><strong>Descrição:</strong> {tarefa.descricao}</p>
+                         <p>
+                        <button type="button" className="btn btn-outline-secondary"
+                            onClick={() => eliminaTarefa(tarefa.id)}>Eliminar</button>
+                        </p>
                     </li>
                 ))}
+                
             </ul>
         </div>
     );
 
 }
-export default tarefas;
+export default Tarefas;
