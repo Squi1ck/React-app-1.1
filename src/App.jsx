@@ -10,6 +10,7 @@ import Alerta from './Alerta.jsx'
 import Contador from './Contador.jsx'
 import Formulario from './Formulario.jsx'
 import Tarefas from './Tarefas.jsx'
+import Notas from './Notas.jsx'
 
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
       {/* <Alerta tipo="success" texto="Este é um alerta do texto" /> */}
       {/* <Alerta tipo="danger" texto="Este é um alerta do texto" /> */}
       {/* <Alerta tipo="warning" texto="Este é um alerta do texto" /> */}
-      <Tarefas />
+      <Notas />
     </div>
   );
 }

@@ -84,15 +84,3 @@ export default tarefas
 
 export default tarefas
 
-    // Validação c: Cálculo da média pesada
-    const mediaPesada = (n1 * (p1 / 100)) + (n2 * (p2 / 100)) + (n3 * (p3 / 100));
-
-    // Validação d: Definição da menção
-    const mencao = mediaPesada >= 9.5 ? 'Aprovado' : 'Reprovado';
-
-    // Guardar resultado formatado com toFixed(2)
-    setResultado({
-      media: mediaPesada.toFixed(2),
-      mencao: mencao
-    });
-  };
