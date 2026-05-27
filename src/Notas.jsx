@@ -35,11 +35,11 @@ function Notas() {
 
     function verResultados() {
         if (parseFloat(formData.percTestes) + parseFloat(formData.percTrabalhos) + parseFloat(formData.percAtitudes) !== 100) {
-            alert("As percentagens devem somar 100!");
+            alert("As percentagens devem somar 100%!");
         } else if (parseFloat(formData.notaTestes) < 0 || parseFloat(formData.notaTestes) > 20 ||
             parseFloat(formData.notaTrabalhos) < 0 || parseFloat(formData.notaTrabalhos) > 20 ||
             parseFloat(formData.notaAtitudes) < 0 || parseFloat(formData.notaAtitudes) > 20) {
-            alert("As notas devem estar entre 0 e 20!");
+            alert("As notas devem estar de 0 a 20!");
         } else {
             const notaFinal = (parseFloat(formData.notaTestes) * parseFloat(formData.percTestes) / 100) +
                 (parseFloat(formData.notaTrabalhos) * parseFloat(formData.percTrabalhos) / 100) +
@@ -143,7 +143,7 @@ function Notas() {
                         <input type="number" className="form-control" step="1" min="0" max="100" value={formData.percAtitudes} onChange={(e) =>
                             setFormData({ ...formData, percAtitudes: e.target.value })} required />
                     </div>
-
+                    
                 </div>
 
             </form>
