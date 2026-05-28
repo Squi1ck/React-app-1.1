@@ -36,10 +36,10 @@ function Notas() {
     function verResultados() {
         if (parseFloat(formData.percTestes) + parseFloat(formData.percTrabalhos) + parseFloat(formData.percAtitudes) !== 100) {
             alert("As percentagens devem somar 100%!");
-        } else if (parseFloat(formData.notaTestes) < 0 || parseFloat(formData.notaTestes) > 20 ||
-            parseFloat(formData.notaTrabalhos) < 0 || parseFloat(formData.notaTrabalhos) > 20 ||
-            parseFloat(formData.notaAtitudes) < 0 || parseFloat(formData.notaAtitudes) > 20) {
-            alert("As notas devem estar de 0 a 20!");
+        } else if (parseFloat(formData.notaTestes) < 0.0 || parseFloat(formData.notaTestes) > 20.0 ||
+            parseFloat(formData.notaTrabalhos) < 0.0 || parseFloat(formData.notaTrabalhos) > 20.0 ||
+            parseFloat(formData.notaAtitudes) < 0.0 || parseFloat(formData.notaAtitudes) > 20.0) {
+            alert("As notas devem estar de 0.0 a 20.0!");
         } else {
             const notaFinal = (parseFloat(formData.notaTestes) * parseFloat(formData.percTestes) / 100) +
                 (parseFloat(formData.notaTrabalhos) * parseFloat(formData.percTrabalhos) / 100) +
@@ -54,7 +54,7 @@ function Notas() {
     function controlnotas(e) {
         const value = e.target.value;
         // normalize numeric inputs between 0 and 20 for the three note fields
-        const normalized = Math.max(0, Math.min(20, parseFloat(value) || 0));
+        const normalized = Math.max(0.0, Math.min(20.0, parseFloat(value) || 0));
         const name = e.target.name;
         if (['notaTestes', 'notaTrabalhos', 'notaAtitudes'].includes(name)) {
             setFormData({ ...formData, [name]: normalized });
@@ -105,19 +105,19 @@ function Notas() {
                 <div className="col-3">
                     <div className="form-group">
                         <label>Nota dos Testes</label>
-                        <input type="number" className="form-control" step="1" min="0" max="20" value={formData.notaTestes} onChange={(e) =>
+                        <input type="number" className="form-control" min="0.0" max="20.0" step="0,1" value={formData.notaTestes} onChange={(e) =>
                             setFormData({ ...formData, notaTestes: e.target.value })} required />
                     </div>
 
                     <div className="form-group">
                         <label>Nota dos Trabalhos:</label>
-                        <input type="number" className="form-control" step="1" min="0" max="20" value={formData.notaTrabalhos} onChange={(e) =>
+                        <input type="number" className="form-control" step="0,1" min="0.0" max="20.0" value={formData.notaTrabalhos} onChange={(e) =>
                             setFormData({ ...formData, notaTrabalhos: e.target.value })} required />
                     </div>
 
                     <div className="form-group">
                         <label>Nota das Atitudes:</label>
-                        <input type="number" className="form-control" step="1" min="0" max="20" value={formData.notaAtitudes} onChange={(e) =>
+                        <input type="number" className="form-control" step="0,1" min="0.0" max="20.0" value={formData.notaAtitudes} onChange={(e) =>
                             setFormData({ ...formData, notaAtitudes: e.target.value })} required />
                     </div>
 
@@ -128,19 +128,19 @@ function Notas() {
                 <div className="col-3">
                     <div className="form-group">
                         <label>(%) Testes</label>
-                        <input type="number" className="form-control" step="1" min="0" max="100" value={formData.percTestes} onChange={(e) =>
+                        <input type="number" className="form-control" step="0,1" min="0.0" max="100.0" value={formData.percTestes} onChange={(e) =>
                             setFormData({ ...formData, percTestes: e.target.value })} required />
                     </div>
 
                     <div className="form-group">
                         <label>(%) Trabalhos:</label>
-                        <input type="number" className="form-control" step="1" min="0" max="100" value={formData.percTrabalhos} onChange={(e) =>
+                        <input type="number" className="form-control" step="0,1" min="0.0" max="100.0" value={formData.percTrabalhos} onChange={(e) =>
                             setFormData({ ...formData, percTrabalhos: e.target.value })} required />
                     </div>
 
                     <div className="form-group">
                         <label>(%) Atitudes:</label>
-                        <input type="number" className="form-control" step="1" min="0" max="100" value={formData.percAtitudes} onChange={(e) =>
+                        <input type="number" className="form-control" step="0,1" min="0.0" max="100.0" value={formData.percAtitudes} onChange={(e) =>
                             setFormData({ ...formData, percAtitudes: e.target.value })} required />
                     </div>
                     
